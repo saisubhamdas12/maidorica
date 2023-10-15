@@ -1,0 +1,33 @@
+{% extends 'dummy1.html' %}
+
+{% block title %}
+<title>login</title>
+{% endblock %}
+
+
+{% block body_block %}
+<div class="container">
+<div class="login-box">
+  <center style="color: rgb(24, 7, 7);">
+    <h2>Login</h2>
+  <form method="POST" style="margin-left: 50px;">
+    {% csrf_token %}
+    <div class="input-box" style="margin-left: 50px;">
+      <input type="text" id="text" name="username" required>
+      <label>Username</label>
+    </div>
+    <div class="input-box" style="margin-left: 50px;">
+      <input type="password" id="password" name="password" required>
+      <label>Password</label>
+    </div>
+    <button type="submit" class="btn" style="color: black;">Login</button>
+    <div class="signup-link">
+      <a href="{% url 'Doctor_registration' %}" style="color: antiquewhite;">Signup</a>
+    </div>
+  </form>
+
+</center>
+</div>
+
+
+{% endblock %}
